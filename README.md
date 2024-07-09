@@ -1,4 +1,4 @@
-# Interact with your complex PDF that includes images, tables, and graphs.
+# Interact with your complex PDF that includes images, tables, and graphs using Raptor RAG.
 
 
 ## Table of Contents
