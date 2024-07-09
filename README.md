@@ -4,6 +4,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [RAPTOR](Recursive Abstractive Processing for Tree-Organized Retrieval)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
@@ -14,6 +15,18 @@
 
 The RAG-RAPTOR-DEMO project simplifies the process of extracting and querying information from Complex PDF documents, including complex content such as tables, graphs, and images. Leveraging state-of-the-art natural language processing models and Unstructured.io for document parsing, as well as integrating RAPTOR, which introduces a novel approach to retrieval-augmented language models by constructing a recursive tree structure from documents for more efficient and context-aware information retrieval across large texts, and Raptor Rag for retrieve semantic chunk, the chatbot provides a user-friendly interface to interact with and retrieve detailed information from these documents.
 
+
+## RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval
+
+**RAPTOR** introduces a novel approach to retrieval-augmented language models by constructing a recursive tree structure from documents. This allows for more efficient and context-aware information retrieval across large texts, addressing common limitations in traditional language models. 
+
+
+For detailed methodologies and implementations, refer to the original paper:
+
+- [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059)
+
+[![Paper page](https://huggingface.co/datasets/huggingface/badges/resolve/main/paper-page-sm.svg)](https://huggingface.co/papers/2401.18059)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/raptor-recursive-abstractive-processing-for/question-answering-on-quality)](https://paperswithcode.com/sota/question-answering-on-quality?p=raptor-recursive-abstractive-processing-for)
 
 ## Features
 
