@@ -18,6 +18,7 @@ load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 POSTGRES_URL_EMBEDDINDS=os.getenv("POSTGRES_URL_EMBEDDINDS")
 
+
 parent_path =os.getcwd()
 print("parent_path",parent_path)
 filename=os.path.join(parent_path,"data/fy2024.pdf")
@@ -49,7 +50,6 @@ def file_reader():
     return raw_pdf_elements
 
 
-
 def summary_of_text_by_gpt(element_type, input):
     summary_prompt = """
     Summarize the following {element_type}:
@@ -62,8 +62,6 @@ def summary_of_text_by_gpt(element_type, input):
 
     summary = runnable.invoke({'element_type': element_type, 'element': input})
     return summary.content
-
-
 
 
 def text_insert(raw_pdf_elements):
@@ -83,7 +81,6 @@ def text_insert(raw_pdf_elements):
                 print("No table content found.")
         print(i)
         i+=1
-
 
 
 def encode_image(image_path):
@@ -111,8 +108,6 @@ def summarize_image_by_gpt(encoded_image):
     return response.content
 
 
-
-
 def get_text_by_page_number(raw_pdf_elements,page_number):
     e = raw_pdf_elements[page_number]
     if 'CompositeElement' in repr(e):
@@ -136,7 +131,6 @@ def get_last_index_of_page(raw_pdf_elements):
             page_numbers.append(page_number)
             last_indices[page_number] = i
     return last_indices
-
 
 
 def match_text_for_no_data_found(text):
@@ -228,8 +222,6 @@ def get_docummets():
     print("image_elements Done")
 
 
-
-
 def raptor():
     leaf_texts = docs_texts
     results = recursive_embed_cluster_summarize(leaf_texts, level=1, n_levels=3)
@@ -241,9 +233,7 @@ def raptor():
         # Extend all_texts with the summaries from the current level
         raptor_texts.extend(summaries)
     print("len of raptor text",len(raptor_texts))
-
     return raptor_texts
-
 
 
 def get_documents_with_raptor(raptor_texts):
@@ -260,8 +250,7 @@ def get_documents_with_raptor(raptor_texts):
         documents.append(doc)
     
 
-
 def add_docs_to_postgres(collection_name):
-    print("Len of documents",len(documents))
+    print("len of documents",len(documents))
     vectorstore = PGVector(embeddings=openai_ef,collection_name=collection_name,connection=POSTGRES_URL_EMBEDDINDS,use_jsonb=True,)
     vectorstore.add_documents(documents)
