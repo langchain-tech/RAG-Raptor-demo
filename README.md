@@ -4,7 +4,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [RAPTOR](Recursive Abstractive Processing for Tree-Organized Retrieval)
+- [RAPTOR](#Recursive-Abstractive-Processing-for-Tree-Organized-Retrieval)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
@@ -27,6 +27,9 @@ For detailed methodologies and implementations, refer to the original paper:
 
 [![Paper page](https://huggingface.co/datasets/huggingface/badges/resolve/main/paper-page-sm.svg)](https://huggingface.co/papers/2401.18059)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/raptor-recursive-abstractive-processing-for/question-answering-on-quality)](https://paperswithcode.com/sota/question-answering-on-quality?p=raptor-recursive-abstractive-processing-for)
+
+- [Github Repo](https://github.com/parthsarthi03/raptor)
+- [Youtube link](https://youtu.be/jbGchdTL7d0?si=Pfc_3vpXw8QdJP5T)
 
 ## Features
 
