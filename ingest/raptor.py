@@ -278,7 +278,9 @@ def embed_cluster_summarize_texts(
 
     # Summarization
     template = """
-    Give a detailed summary of the provided context : {context}
+    Please summarize the following paragraphs. Be careful with the numbers, do not make things up. Paragraphs as following:
+      {context}
+    The above is the content you need to summarize.
     """
     prompt = ChatPromptTemplate.from_template(template)
     chain = prompt | model | StrOutputParser()

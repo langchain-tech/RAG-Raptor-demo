@@ -81,14 +81,23 @@ poetry shell
 ```
 This step is optional because Poetry automatically manages the virtual environment for you when you run commands through it.
 
+
 **4. Set Up Environment Variables:**
 Create a .env file in the root directory of your project and add the required environment variables. For example:
 ```
 OPENAI_API_KEY=Your_OPENAI_API_KEY
-POSTGRES_URL_EMBEDDINDS=YOUR_POSTGRES_URL
-POSTGRES_URL=YOUR_POSTGRES_URL
+POSTGRES_URL_EMBEDDINDS=YOUR_POSTGRES_URL  like:-postgresql+psycopg://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}
+POSTGRES_URL=YOUR_POSTGRES_URL   like:- postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}
 ```
-**5. Start the Application:**
+
+**5. Run Data ingestion file**
+-Install the necessary packages listed in the requirements.txt file:
+```
+python3 ingest/app.py
+```
+
+
+**6. Start the Application:**
 
 Run the application using Streamlit:
 ```
@@ -98,45 +107,3 @@ streamlit run app.py
 ## Examples
 ![My test image](data/raptor1.png)
 ![My test image](data/raptor2.png)
-
-
-
-## Instructions for Setting Up Data Ingestion from PDF file.
-
-Follow these steps to set up data ingestion from Google Drive:
-
-**1. Clone the Repository:**
-- Begin by cloning the repository to your local machine:
-```
-https://github.com/langchain-tech/Rag-raptor-demo.git
-cd Rag-raptor-demo
-```
-
-**2. Create a Virtual Environment**
--It is recommended to create a virtual environment to manage dependencies:
-```
-python -m venv venv
-source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
-```
-
-**3. Install Dependencies**
--Install the necessary packages listed in the requirements.txt file:
-```
-pip install -r unstructured_requirements.txt
-```
-
-
-**4. Set Up Environment Variables**
--Create a .env file in the root directory of your project and add the required environment variables. For example:
-```
-OPENAI_API_KEY=Your_OPENAI_API_KEY
-POSTGRES_URL_EMBEDDINDS=YOUR_POSTGRES_URL
-POSTGRES_URL=YOUR_POSTGRES_URL
-```
-
-**3. Eun ingest Data filr**
--Install the necessary packages listed in the requirements.txt file:
-```
-python3 ingest/app.py
-```
-

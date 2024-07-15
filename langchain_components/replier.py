@@ -27,9 +27,9 @@ def prepare_prompt_and_chain_with_history():
         [
             (
                 "system",
-                """You are an expert in data that hepls to summerize the text and answer the question based only on the following content, which may include text and tables: if the content is not relevent then return I don't know.""",
+                """You are an intelligent assistant. Please summarize the content of the knowledge base to answer the question. Please list the data in the knowledge base and answer in detail. When all knowledge base content is irrelevant to the question, your answer must include the sentence "The answer you are looking for is not found in the knowledge base!" Answers need to consider chat history.""",
             ),
-            "Here is the context to answer user's questions everytime --> {data}. ",
+            "Here is the knowledge base: {knowledge} The above is the knowledge base. ",
             MessagesPlaceholder(variable_name="history"),
             ("user", "{input}"),
         ]
